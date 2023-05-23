@@ -15,7 +15,7 @@ function calcTax(){
     let healthDeCalc= Math.min(95596,(salary.value*0.01));
     let healthIncCalc= Math.min(480000,(salary.value*0.04));
     healthDe.innerHTML=healthDeCalc.toLocaleString('en-US');
-    ptkp.innerHTML=ptkpVal.value.toLocaleString('en-US');
+    ptkp.innerHTML=parseInt(ptkpVal.value).toLocaleString('en-US');
     calc21(realSal);
     // tax.innerHTML=taxCalc.toLocaleString('en-US');
     healthInc.innerHTML=healthIncCalc.toLocaleString('en-US');

@@ -2,6 +2,6 @@
     display:flex;
 
 }
-/* div{
-    padding: 2px;
-} */
+#calc{
+    display:none;
+}

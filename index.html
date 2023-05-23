@@ -13,22 +13,23 @@
         <input type="text" id="salary" placeholder="5,000,0000">
         <button onclick="calcTax()">Click Calculate</button>
 
-    <div id="ptkp">
+    <div id="ptkpLabel">
         <label for="ptkp">Choose your PTKP:</label>
-  <select name="cars" id="cars">
-    <option value="TK0">TK0</option>
-    <option value="TK0">TK1</option>
-    <option value="TK0">TK2</option>
-    <option value="TK0">TK3</option>
-    <option value="K0">K0</option>
-    <option value="K1">K1</option>
-    <option value="K2">K2</option>
-    <option value="K3">K3</option>
-    <option value="K3">K/I/0</option>
+  <select name="ptkpList" id="ptkpList">
+    <option value="54000000">TK0</option>
+    <option value="58500000">TK1</option>
+    <option value="63000000">TK2</option>
+    <option value="67500000">TK3</option>
+    <option value="58500000">K0</option>
+    <option value="63000000">K1</option>
+    <option value="67500000">K2</option>
+    <option value="72000000">K3</option>
+    <!-- <option value="K3">K/I/0</option>
     <option value="K3">K/I/1</option>
     <option value="K3">K/I/2</option>
-    <option value="K3">K/I/3</option>
+    <option value="K3">K/I/3</option> -->
  </select>
+ </div>
  <br>
 
  <label for="pension"> Pension</label>
@@ -48,6 +49,11 @@
             <label>JPK:   </label>
             <div id="healthInc">Calculate</div>
         </div>
+
+        <div class="box">
+            <label >PTKP:   </label>
+            <div id="ptkp">Calculate</div>
+        </div>    
     Deductions
     
     <div class="box">

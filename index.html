@@ -8,12 +8,18 @@
     <title>Indonesian Tax Calculator</title>
 </head>
 <body>
+    <div class="header">
+        <h1>Indonesia Tax Calculator</h1>
+        <p>Input your salary below</p>
+      </div>
+      <div class="body">
     <div id="container">
         <label for="Salary">Monthly Salary:</label>
         <input type="text" id="salary" placeholder="10,000,0000">
         <button onclick="calcTax()">Click Calculate</button>
         <br>
-<div id="startMonth">
+
+    <div id="startMonth">
     <label> Start Month</label>
     <select name='sMonth' id='sMonth'>
             <!-- <option value=''>--Select Month--</option> -->
@@ -89,7 +95,7 @@
     <br>
     
     <div id="calc">
-        <p>Incentives</p>
+        <p class="title">Incentives</p>
         <div class="box">
             <label>Jaminan Kecelakaan Kerja(JKK):   </label>
             <div id="kecVal">Calculate</div>
@@ -115,7 +121,7 @@
         </div> 
         <br>   
 
-    Deductions
+    <p class="title">Deductions</p>
     
    
     <div class="box">
@@ -159,7 +165,7 @@
     <br>
 
 
-    Taxes
+    <p class="title">Taxes</p>
     <div class="box">
         <label >Tax per year :   </label>
         <div id="yearTax">Calculate</div>
@@ -169,6 +175,7 @@
         <div id="monthTax">Calculate</div>
     </div>
 </div>
+
         
     <script src="script.js"></script>    
 </body>

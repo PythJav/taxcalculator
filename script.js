@@ -41,7 +41,7 @@ function calcTax(){
   findPtkp();
   calcMonth();
   
-    document.getElementById("calc").style.display = "block";
+    document.getElementById("calc").style.display = "flex";
     const realSal = salary.value;
     findPtkp();
     

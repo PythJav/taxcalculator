@@ -12,6 +12,8 @@ const calcmWork = document.getElementById("calcmWork");
 
 
 function calcTax(){
+  findPtkp();
+  calcMonth();
   
     document.getElementById("calc").style.display = "block";
     const realSal = salary.value;
@@ -43,7 +45,7 @@ function findPtkp(){
 }
 function calcMonth(){
  
-  let mWorked = eMonth.value-sMonth.value+1;
+  let mWorked = eMonth.value-sMonth.value;
   calcmWork.innerHTML=mWorked;
   
   

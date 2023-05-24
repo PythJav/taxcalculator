@@ -1,5 +1,6 @@
 const salary = document.getElementById("salary");
-const tax = document.getElementById("yourTax");
+const tax = document.getElementById("yearTax");
+const monthTax = document.getElementById("monthTax");
 const healthDe = document.getElementById("healthDe");
 const healthInc = document.getElementById("healthInc");
 const kecVal = document.getElementById("kecVal");
@@ -8,7 +9,11 @@ const grossInc = document.getElementById("grossInc");
 const occDe = document.getElementById("occDe");
 const harDe = document.getElementById("harDe");
 const penDe = document.getElementById("penDe");
-const nettDiv = document.getElementById("nettDiv");
+const monthDiv = document.getElementById("monthDiv");
+const yearDiv = document.getElementById("yearDiv");
+const roundyearDiv = document.getElementById("roundyearDiv");
+
+
 
 
 const ptkp = document.getElementById("ptkp");
@@ -24,9 +29,12 @@ let bpjsKem;
 let grossTot;
 let occTot;
 let penTot;
-let nettTot;
+let monthTot;
 let harTot;
-let incomeTax;
+let taxyearTot;
+let mWorked;
+let roundYear;
+let taxmonthTot;
 
 
 function calcTax(){
@@ -40,14 +48,18 @@ function calcTax(){
     calcMonth();
     let taxCalc= (parseFloat(salary.value*0.15));
     
-    calc21(realSal);
+    
     bpjsHealth();
     bpjsTk();
     grossIncCalc();
     occCost();
     penCost();
     harCost();
-    nettCost()
+    monthCost();
+    yearCost();
+    roundDown();
+    taxYear(roundYear);
+    taxMonth();
     
     // tax.innerText=taxCalc.toLocaleString('en-US');
     
@@ -91,10 +103,22 @@ function penCost(){
   penDe.innerText=penTot.toLocaleString('en-US');
 }
 
-function nettCost(){
-  nettTot = grossTot-occTot-harTot-penTot;
-  nettDiv.innerText=nettTot.toLocaleString('en-US');
+function monthCost(){
+  monthTot = grossTot-occTot-harTot-penTot;
+  monthDiv.innerText=monthTot.toLocaleString('en-US');
 }
+
+function yearCost(){
+  yearTot= monthTot*mWorked;
+  yearDiv.innerText=yearTot.toLocaleString('en-US');
+
+}
+
+function roundDown(){
+  roundYear= yearTot - yearTot % 1000;
+  roundyearDiv.innerText=roundYear.toLocaleString('en-US');
+}
+
 
 function findPtkp(){
   ptkp.innerText=parseInt(ptkpVal.value).toLocaleString('en-US');
@@ -103,31 +127,40 @@ function findPtkp(){
 }
 function calcMonth(){
  
-  let mWorked = eMonth.value-sMonth.value;
+  mWorked = eMonth.value-sMonth.value;
   calcmWork.innerText=mWorked;
   
   
 
 }
-function calc21 (amount) {
+function taxYear (amount) {
   if (amount <= 60000000) {
-    incomeTax= amount * 0.05;
+    taxyearTot= amount * 0.05;
   }
   else if (amount <= 250000000) {
-    incomeTax= (amount - 60000000) * 0.15 + 3000000;
+    taxyearTot= (amount - 60000000) * 0.15 + 3000000;
   }
   else if (amount <= 500000000) {
-    incomeTax= (amount - 250000000) * 0.25 +   31500000  ;
+    taxyearTot= (amount - 250000000) * 0.25 +   31500000  ;
   }
   else if (amount <= 5000000000) {
-    incomeTax= (amount - 500000000) * 0.3 +   94000000  ;
+    taxyearTot= (amount - 500000000) * 0.3 +   94000000  ;
   }
   else {
-    incomeTax= (amount - 5000000000) * 0.35 +  1819000000 ;
+    taxyearTot= (amount - 5000000000) * 0.35 +  1819000000 ;
   }
-      tax.innerText=incomeTax.toLocaleString('en-US'); 
+      tax.innerText=taxyearTot.toLocaleString('en-US'); 
 
 };
+
+function taxMonth(){
+  taxmonthTot= taxyearTot/ mWorked;
+  monthTax.innerText=taxmonthTot.toLocaleString('en-US'); 
+
+
+  
+
+}
 // More advanced but could not find the solution
 // const brackets = [ 
 //     { rate: 0.05, maxAmount: 60000000    },
@@ -137,7 +170,7 @@ function calc21 (amount) {
 //     { rate: 0.35, maxAmount: Infinity    },
 //   ];
 
-// function calc21(income){
+// function taxYear(income){
 //     let incomeTax = 0;
 //     for (let i = 0; i < brackets.length; i++){
 //       if (income > brackets[i].maxAmount){

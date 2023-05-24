@@ -9,11 +9,53 @@
 </head>
 <body>
     <div id="container">
-        <label for="Salary">Salary:</label>
-        <input type="text" id="salary" placeholder="5,000,0000">
+        <label for="Salary">Monthly Salary:</label>
+        <input type="text" id="salary" placeholder="10,000,0000">
         <button onclick="calcTax()">Click Calculate</button>
-
-    <div id="ptkpLabel">
+        <br>
+<div id="startMonth">
+    <label> Start Month</label>
+    <select name='sMonth' id='sMonth'>
+            <!-- <option value=''>--Select Month--</option> -->
+            <option selected value=''>--Select Month--</option>
+            <option value='2'>February</option>
+            <option value='3'>March</option>
+            <option value='4'>April</option>
+            <option value='5'>May</option>
+            <option value='6'>June</option>
+            <option value='7'>July</option>
+            <option value='8'>August</option>
+            <option value='9'>September</option>
+            <option value='10'>October</option>
+            <option value='11'>November</option>
+            <option value='12'>December</option>
+            </select> 
+            <br>
+            </div>
+ <div id="endMonth">
+    <label>End Month</label>
+    <select name='eMonth' id='eMonth'>
+                <!-- <option value=''>--Select Month--</option> -->
+                <option selected value=''>--Select Month--</option>
+                <option value='2'>February</option>
+                <option value='3'>March</option>
+                <option value='4'>April</option>
+                <option value='5'>May</option>
+                <option value='6'>June</option>
+                <option value='7'>July</option>
+                <option value='8'>August</option>
+                <option value='9'>September</option>
+                <option value='10'>October</option>
+                <option value='11'>November</option>
+                <option value='12'>December</option>
+                </select>
+                <br> 
+            </div>
+<div id="monthsWorked">
+    <label>Months Worked</label>
+    <div id="calcmWork">Calculate</div>
+</div>
+<div id="ptkpLabel">
         <label for="ptkp">Choose your PTKP:</label>
   <select name="ptkpList" id="ptkpList">
     <option value="54000000">TK0</option>

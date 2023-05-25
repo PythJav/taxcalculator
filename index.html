@@ -64,23 +64,22 @@
         </div>
 
         <div class="checkBox">
-            <label for="pension"> Pension</label>
+            <div><label for="pension"> Pension</label>
  <input type="checkbox" id="pensionCheck" name="pension" value="pension">
-<br>
+<br></div>
 
-<label for="health"> Health</label>
+<div><label for="health"> Health</label>
  <input type="checkbox" id="healthCheck" name="health" value="health">
+</div>
 
- <br>
-
-<label for="restTK"> JHT/JKK/JKM</label>
+ <div><label for="restTK"> JHT/JKK/JKM</label>
  <input type="checkbox" id="tkCheck" name="tkCheck" value="tkCheck">
-
+</div>
 </div>
 </div>
 
 <div class="box" id="monthsWorked">
-    <label>Months Worked: </label>
+    <label class="formTitle">Months Worked: </label>
     <div id="calcmWork">0</div>
 </div>
 <div id="ptkpLabel">
@@ -126,10 +125,7 @@
             <div id="healthInc">0</div>
         </div>
 
-        <div class="box">
-            <label >PTKP:   </label>
-            <div id="ptkp">0</div>
-        </div>    
+           
         <br>
         <div class="box">
             <label >Gross income:   </label>
@@ -173,11 +169,21 @@
 
     </div>
 
+
    <div class="box">
         <label>Rounded Nett income per year:   </label>
         <div id="roundyearDiv">0</div>
 
     </div>
+    <div class="box">
+        <label >PTKP:   </label>
+        <div id="ptkp">0</div>
+    </div> 
+
+    <div class="box">
+        <label >Taxable Income:   </label>
+        <div id="incDiv">0</div>
+    </div> 
     <br>
 
 
@@ -189,6 +195,13 @@
     <div class="box">
         <label >Tax per month :   </label>
         <div id="monthTax">0</div>
+    </div>
+    <div class="takeHome">
+        <div class="box">
+        <label >Take home pay :   </label>
+        <div id="takeHome">0</div>
+    </div>
+
     </div>
 </div>
 

@@ -46,8 +46,26 @@ div{
 
   .input{
     display:flex;
-    align-items: center;
+    align-items:center;
     justify-content: space-between;
+  }
+
+  label {
+     background: #EEE; border-color: #BBB; 
+    }
+  label,.td{
+    border-width: 1px;
+    padding: 0.5em;
+    position: relative;
+    text-align: left;
+    border-radius: 0.25em;
+    border-style: solid;
+  }
+
+  .checkBox{
+    display:flex;
+    flex-direction: column;
+
   }
   
   /* .title:after,.title :before {

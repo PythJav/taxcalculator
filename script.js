@@ -14,6 +14,8 @@ const yearDiv = document.getElementById("yearDiv");
 const roundyearDiv = document.getElementById("roundyearDiv");
 const pensionCheck = document.getElementById("pensionCheck");
 const healthCheck = document.getElementById("healthCheck");
+const tkCheck = document.getElementById("tkCheck");
+
 
 
 
@@ -24,15 +26,15 @@ const sMonth = document.getElementById("sMonth");
 const eMonth = document.getElementById("eMonth");
 const calcmWork = document.getElementById("calcmWork");
 
-let healthDeCalc;
-let healthIncCalc;
-let bpjsKec;
-let bpjsKem;
+let healthDeCalc = 0;
+let healthIncCalc = 0;
+let bpjsKec = 0;
+let bpjsKem = 0;
 let grossTot;
 let occTot;
-let penTot;
+let penTot = 0;
 let monthTot;
-let harTot;
+let harTot= 0;
 let taxyearTot;
 let mWorked;
 let roundYear;
@@ -52,12 +54,17 @@ function calcTax(){
     
     
     // bpjsHealth();
-    bpjsTk();
-    grossIncCalc();
-    occCost();
+    // bpjsTk();
     // penCost();
+    // harCost();
+
+    
+  
+    resetBox();
     checkBox();
-    harCost();
+    occCost();
+    grossIncCalc();
+    
     monthCost();
     yearCost();
     roundDown();
@@ -77,6 +84,17 @@ function bpjsHealth(){
   healthInc.innerText=healthIncCalc.toLocaleString('en-US');
   
 }
+
+function resetBox(){
+  penDe.innerText=0;
+  healthDe.innerText=0;
+  healthInc.innerText=0;
+  kecVal.innerText=0;
+  kemVal.innerText=0;
+  harDe.innerText=0;
+
+
+}
 function checkBox(){
   if(pensionCheck.checked== true){
     penCost();
@@ -84,6 +102,11 @@ function checkBox(){
   if (healthCheck.checked==true){
     bpjsHealth();
   }
+  if (tkCheck.checked==true){
+    bpjsTk();
+
+  }
+
   
 }
 
@@ -92,6 +115,8 @@ function bpjsTk(){
   kecVal.innerText=bpjsKec.toLocaleString('en-US');
    bpjsKem= salary.value*0.3;
   kemVal.innerText=bpjsKem.toLocaleString('en-US');
+  harTot= (salary.value)*0.02;
+  harDe.innerText=harTot.toLocaleString('en-US');
 
 
 }
@@ -106,11 +131,11 @@ function occCost(){
   occDe.innerText=occTot.toLocaleString('en-US');
 
 }
-function harCost(){
-  harTot= (salary.value)*0.02;
-  harDe.innerText=harTot.toLocaleString('en-US');
+// function harCost(){
+//   harTot= (salary.value)*0.02;
+//   harDe.innerText=harTot.toLocaleString('en-US');
 
-}
+// }
 
 function penCost(){
   penTot = Math.min(95596,(salary.value*0.01));

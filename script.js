@@ -41,6 +41,24 @@ let roundYear;
 let taxmonthTot;
 
 
+function checkInput(){
+  if(salary.value==0){
+    alert("Input number");
+  }
+  else if(sMonth.value ==""){
+    alert("Input starting month")
+
+  }
+  else if(eMonth.value ==""){
+    alert("Input ending month")
+
+  }
+  else{
+    calcTax();
+
+  }  
+  }
+
 function calcTax(){
   findPtkp();
   calcMonth();
@@ -76,6 +94,8 @@ function calcTax(){
 
 
 }
+
+
 
 function bpjsHealth(){
    healthDeCalc= Math.min(120000,(salary.value*0.01));

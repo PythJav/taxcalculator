@@ -16,9 +16,11 @@
     <div id="container">
         <label for="Salary">Monthly Salary:</label>
         <input type="text" id="salary" placeholder="10,000,0000">
-        <button onclick="calcTax()">Click Calculate</button>
+        <button onclick="calcTax()">Click 0</button>
         <br>
 
+   <div class="input"> 
+    <div class="months">
     <div id="startMonth">
     <label> Start Month</label>
     <select name='sMonth' id='sMonth'>
@@ -59,9 +61,20 @@
                 </select>
                 <br> 
             </div>
+        </div>
+
+        <div class="checkBox">
+            <label for="pension"> Pension</label>
+ <input type="checkbox" id="pensionCheck" name="pension" value="pension">
+<br>
+<label for="health"> Health</label>
+ <input type="checkbox" id="healthCheck" name="health" value="health">
+</div>
+</div>
+
 <div class="box" id="monthsWorked">
     <label>Months Worked: </label>
-    <div id="calcmWork">Calculate</div>
+    <div id="calcmWork">0</div>
 </div>
 <div id="ptkpLabel">
         <label for="ptkp">Choose your PTKP:</label>
@@ -82,11 +95,7 @@
  </div>
  <br>
 
- <label for="pension"> Pension</label>
- <input type="checkbox" id="pension" name="pension" value="pension">
-<br>
-<label for="health"> Health</label>
- <input type="checkbox" id="health" name="health" value="health">
+ 
 <br>
 
 
@@ -98,26 +107,26 @@
         <p class="title">Incentives</p>
         <div class="box">
             <label>Jaminan Kecelakaan Kerja(JKK):   </label>
-            <div id="kecVal">Calculate</div>
+            <div id="kecVal">0</div>
         </div>
         <div class="box">
             <label> Jaminan Kematian (JKM):   </label>
-            <div id="kemVal">Calculate</div>
+            <div id="kemVal">0</div>
         </div>
         
         <div class="box">
             <label>BPJS Kesehatan (KS):   </label>
-            <div id="healthInc">Calculate</div>
+            <div id="healthInc">0</div>
         </div>
 
         <div class="box">
             <label >PTKP:   </label>
-            <div id="ptkp">Calculate</div>
+            <div id="ptkp">0</div>
         </div>    
         <br>
         <div class="box">
             <label >Gross income:   </label>
-            <div id="grossInc">Calculate</div>
+            <div id="grossInc">0</div>
         </div> 
         <br>   
 
@@ -126,40 +135,40 @@
    
     <div class="box">
         <label>Occupation Cost:   </label>
-        <div id="occDe">Calculate</div>
+        <div id="occDe">0</div>
     </div>
 
     <div class="box">
         <label>Jaminan Hari Tua (JHT):   </label>
-        <div id="harDe">Calculate</div>
+        <div id="harDe">0</div>
     </div>
 
     <div class="box">
         <label>Pension:   </label>
-        <div id="penDe">Calculate</div>
+        <div id="penDe">0</div>
     </div>
 
     <div class="box">
         <label>BPJS Health:   </label>
-        <div id="healthDe">Calculate</div>
+        <div id="healthDe">0</div>
 
     </div>
     <br>
     <div class="box">
         <label>Nett income per month:   </label>
-        <div id="monthDiv">Calculate</div>
+        <div id="monthDiv">0</div>
 
     </div>
 
     <div class="box">
         <label>Nett income per year:   </label>
-        <div id="yearDiv">Calculate</div>
+        <div id="yearDiv">0</div>
 
     </div>
 
    <div class="box">
         <label>Rounded Nett income per year:   </label>
-        <div id="roundyearDiv">Calculate</div>
+        <div id="roundyearDiv">0</div>
 
     </div>
     <br>
@@ -168,11 +177,11 @@
     <p class="title">Taxes</p>
     <div class="box">
         <label >Tax per year :   </label>
-        <div id="yearTax">Calculate</div>
+        <div id="yearTax">0</div>
     </div>
     <div class="box">
         <label >Tax per month :   </label>
-        <div id="monthTax">Calculate</div>
+        <div id="monthTax">0</div>
     </div>
 </div>
 

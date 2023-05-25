@@ -12,6 +12,8 @@ const penDe = document.getElementById("penDe");
 const monthDiv = document.getElementById("monthDiv");
 const yearDiv = document.getElementById("yearDiv");
 const roundyearDiv = document.getElementById("roundyearDiv");
+const pensionCheck = document.getElementById("pensionCheck");
+const healthCheck = document.getElementById("healthCheck");
 
 
 
@@ -49,11 +51,12 @@ function calcTax(){
     let taxCalc= (parseFloat(salary.value*0.15));
     
     
-    bpjsHealth();
+    // bpjsHealth();
     bpjsTk();
     grossIncCalc();
     occCost();
-    penCost();
+    // penCost();
+    checkBox();
     harCost();
     monthCost();
     yearCost();
@@ -66,6 +69,7 @@ function calcTax(){
 
 
 }
+
 function bpjsHealth(){
    healthDeCalc= Math.min(120000,(salary.value*0.01));
   healthDe.innerText=healthDeCalc.toLocaleString('en-US');
@@ -73,6 +77,16 @@ function bpjsHealth(){
   healthInc.innerText=healthIncCalc.toLocaleString('en-US');
   
 }
+function checkBox(){
+  if(pensionCheck.checked== true){
+    penCost();
+  }
+  if (healthCheck.checked==true){
+    bpjsHealth();
+  }
+  
+}
+
 function bpjsTk(){
    bpjsKec = salary.value*0.24;
   kecVal.innerText=bpjsKec.toLocaleString('en-US');

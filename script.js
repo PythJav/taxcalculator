@@ -17,6 +17,8 @@ const healthCheck = document.getElementById("healthCheck");
 const tkCheck = document.getElementById("tkCheck");
 const takeHome = document.getElementById("takeHome");
 const incDiv = document.getElementById("incDiv");
+const bonDiv = document.getElementById("bonus");
+
 
 
 
@@ -43,6 +45,7 @@ let roundYear;
 let taxmonthTot;
 let takeTot;
 let finTax;
+let monthBon=0;
 
 
 function checkInput(){
@@ -88,6 +91,7 @@ function calcTax(){
     grossIncCalc();
     
     monthCost();
+    // monthbonCost();
     yearCost();
     roundDown();
     taxInc();
@@ -156,7 +160,7 @@ function grossIncCalc(){
 }
 
 function occCost(){
-  occTot = Math.floor(Math.min(500000,(salary.value*0.05)));
+  occTot = Math.floor(Math.min(500000,(grossTot*0.05)));
   occDe.innerText=occTot.toLocaleString('en-US');
 
 }
@@ -176,8 +180,12 @@ function monthCost(){
   monthDiv.innerText=monthTot.toLocaleString('en-US');
 }
 
+// function monthbonCost(){
+//   monthBon= monthTot+parseInt(bonDiv.value);
+// }
+
 function yearCost(){
-  yearTot= monthTot*mWorked;
+  yearTot= monthTot*(mWorked-1);
   yearDiv.innerText=yearTot.toLocaleString('en-US');
 
 }

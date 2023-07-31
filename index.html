@@ -17,12 +17,12 @@
         <div id="container">
             <div class="sal">
                 <div class="salInput">
-                    <label for="Salary">Monthly Salary:</label>
+                    <div class="cTtitle">Monthly Salary:</div>
                     <input type="text" id="salary" placeholder="10,000,0000">
                    
                 </div>
                 <div class="salType">
-                    <label >Salary Type</label>
+                    <div class="cTtitle"> Salary Type</div>
                     <select name="sType" id="sType">
                     <option value="1">Monthly</option>
                     <option value="12">Annual</option>
@@ -39,7 +39,7 @@
             <div class="input">
                 <div class="months">
                     <div id="startMonth">
-                        <label> Start Month</label>
+                        <div class="cTtitle"> Start Month</div>
                         <select name='sMonth' id='sMonth'>
                             <!-- <option value=''>--Select Month--</option> -->
                             <option selected value=''>--Select Month--</option>
@@ -60,7 +60,7 @@
                     </div>
                     <br>
                     <div id="endMonth">
-                        <label>End Month</label>
+                        <div class="cTtitle">End Month</div>
                         <select name='eMonth' id='eMonth'>
                             <!-- <option value=''>--Select Month--</option> -->
                             <option selected value=''>--Select Month--</option>
@@ -77,32 +77,31 @@
                             <option value='11'>November</option>
                             <option value='12'>December</option>
                         </select>
-                        <br>
                     </div>
                 </div>
 
                
             </div>
             <div class="checkBox">
-                <div><label for="pension"> Pension</label>
+                <div><div class="cTtitle"> Pension</div>
                     <input type="checkbox" id="pensionCheck" name="pension" value="pension">
                     <br>
                 </div>
 
-                <div><label for="health"> Health</label>
+                <div><div class="cTtitle"> Health</div>
                     <input type="checkbox" id="healthCheck" name="health" value="health">
                 </div>
 
-                <div><label for="restTK"> JHT/JKK/JKM</label>
+                <div><div class="cTtitle"> JHT/JKK/JKM</div>
                     <input type="checkbox" id="tkCheck" name="tkCheck" value="tkCheck">
                 </div>
             </div>
             <div class="box" id="monthsWorked">
-                <label class="formTitle">Months Worked: </label>
+                <div class="cTtitle">Months Worked: </div>
                 <div id="calcmWork"> 0</div>
             </div>
             <div id="ptkpLabel">
-                <label for="ptkp">Choose your PTKP:</label>
+                <div class="cTtitle">Choose your PTKP:</div>
                 <select name="ptkpList" id="ptkpList">
                     <option value="54000000">TK0</option>
                     <option value="58500000">TK1</option>

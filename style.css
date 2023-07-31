@@ -65,7 +65,7 @@ div{
   label {
      background: #EEE; border-color: #BBB; 
     }
-  label,.td{
+  label{
     border-width: 1px;
     padding: 0.5em;
     position: relative;
@@ -90,8 +90,14 @@ div{
     text-align: center;
  }
 
- table, th, td {
+ th {
   border: 1px solid black;
+  padding: 8px;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: sans-serif;
 }
   /* .title:after,.title :before {
     content: " ";
@@ -100,3 +106,7 @@ div{
     background-color:#f8f8f8;
   } */
   
+  .tTitle{
+    background-color: cyan;
+    text-align: center;
+  }

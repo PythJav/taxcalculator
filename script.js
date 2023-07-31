@@ -87,8 +87,9 @@ function calcTax(){
   
     resetBox();
     checkBox();
-    occCost();
+    
     grossIncCalc();
+    occCost();
     
     monthCost();
     // monthbonCost();

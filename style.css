@@ -40,11 +40,13 @@
 }
 
 body{
-  padding : 0 250px;
   background-color: #1f2029;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin:0;
+  
+
 }
 div{
   margin: 10px 0;
@@ -105,13 +107,17 @@ div{
   }
 
   .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+
     width: 100%;
     background-color:#1abc9c;
     color: white;
     text-align: center;
+    position:relative;
+    bottom:0;
+
+
+  
+
  }
 
  th {

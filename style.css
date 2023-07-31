@@ -121,6 +121,8 @@ div{
 table {
   border-collapse: collapse;
   font-family: sans-serif;
+  border-radius: 13px;
+  overflow: hidden;
 }
   /* .title:after,.title :before {
     content: " ";

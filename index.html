@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
@@ -7,211 +8,257 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indonesian Tax Calculator</title>
 </head>
+
 <body>
     <div class="header">
         <h1>Indonesia Tax Calculator</h1>
-        <p>Input your salary below</p>
-      </div>
-      <div class="body">
-    <div id="container">
-        <div class="sal">
-            <div class="salInput">
-            <label for="Salary">Monthly Salary:</label>
-        <input type="text" id="salary" placeholder="10,000,0000">
-        <button onclick="checkInput()">Calculate</button>
     </div>
-    <div hidden class="bonInput">
-        <label for="Bonus">Bonus</label>
-        <input type="text" id="bonus">
-    </div>
-    </div>
-
-
-   <div class="input"> 
-    <div class="months">
-    <div id="startMonth">
-    <label> Start Month</label>
-    <select name='sMonth' id='sMonth'>
-            <!-- <option value=''>--Select Month--</option> -->
-            <option selected value=''>--Select Month--</option>
-            <option value='0'>January</option>
-            <option value='1'>February</option>
-            <option value='2'>March</option>
-            <option value='3'>April</option>
-            <option value='4'>May</option>
-            <option value='5'>June</option>
-            <option value='6'>July</option>
-            <option value='7'>August</option>
-            <option value='8'>September</option>
-            <option value='9'>October</option>
-            <option value='10'>November</option>
-            <option value='11'>December</option>
-            </select> 
-            <br>
-            </div>
- <div id="endMonth">
-    <label>End Month</label>
-    <select name='eMonth' id='eMonth'>
-                <!-- <option value=''>--Select Month--</option> -->
-                <option selected value=''>--Select Month--</option>
-                <option value='1'>January</option>
-                <option value='2'>February</option>
-                <option value='3'>March</option>
-                <option value='4'>April</option>
-                <option value='5'>May</option>
-                <option value='6'>June</option>
-                <option value='7'>July</option>
-                <option value='8'>August</option>
-                <option value='9'>September</option>
-                <option value='10'>October</option>
-                <option value='11'>November</option>
-                <option value='12'>December</option>
+    <div class="body">
+        <div id="container">
+            <div class="sal">
+                <div class="salInput">
+                    <label for="Salary">Monthly Salary:</label>
+                    <input type="text" id="salary" placeholder="10,000,0000">
+                   
+                </div>
+                <div class="salType">
+                    <label >Salary Type</label>
+                    <select name="sType" id="sType">
+                    <option value="1">Monthly</option>
+                    <option value="12">Annual</option>
                 </select>
-                <br> 
+        
+                </div>
+                <div hidden class="bonInput">
+                    <label for="Bonus">Bonus</label>
+                    <input type="text" id="bonus">
+                </div>
             </div>
-        </div>
 
-        <div class="checkBox">
-            <div><label for="pension"> Pension</label>
- <input type="checkbox" id="pensionCheck" name="pension" value="pension">
-<br></div>
 
-<div><label for="health"> Health</label>
- <input type="checkbox" id="healthCheck" name="health" value="health">
-</div>
+            <div class="input">
+                <div class="months">
+                    <div id="startMonth">
+                        <label> Start Month</label>
+                        <select name='sMonth' id='sMonth'>
+                            <!-- <option value=''>--Select Month--</option> -->
+                            <option selected value=''>--Select Month--</option>
+                            <option value='0'>January</option>
+                            <option value='1'>February</option>
+                            <option value='2'>March</option>
+                            <option value='3'>April</option>
+                            <option value='4'>May</option>
+                            <option value='5'>June</option>
+                            <option value='6'>July</option>
+                            <option value='7'>August</option>
+                            <option value='8'>September</option>
+                            <option value='9'>October</option>
+                            <option value='10'>November</option>
+                            <option value='11'>December</option>
+                        </select>
+                        <br>
+                    </div>
+                    <br>
+                    <div id="endMonth">
+                        <label>End Month</label>
+                        <select name='eMonth' id='eMonth'>
+                            <!-- <option value=''>--Select Month--</option> -->
+                            <option selected value=''>--Select Month--</option>
+                            <option value='1'>January</option>
+                            <option value='2'>February</option>
+                            <option value='3'>March</option>
+                            <option value='4'>April</option>
+                            <option value='5'>May</option>
+                            <option value='6'>June</option>
+                            <option value='7'>July</option>
+                            <option value='8'>August</option>
+                            <option value='9'>September</option>
+                            <option value='10'>October</option>
+                            <option value='11'>November</option>
+                            <option value='12'>December</option>
+                        </select>
+                        <br>
+                    </div>
+                </div>
 
- <div><label for="restTK"> JHT/JKK/JKM</label>
- <input type="checkbox" id="tkCheck" name="tkCheck" value="tkCheck">
-</div>
-</div>
-</div>
+               
+            </div>
+            <div class="checkBox">
+                <div><label for="pension"> Pension</label>
+                    <input type="checkbox" id="pensionCheck" name="pension" value="pension">
+                    <br>
+                </div>
 
-<div class="box" id="monthsWorked">
-    <label class="formTitle">Months Worked: </label>
-    <div id="calcmWork">0</div>
-</div>
-<div id="ptkpLabel">
-        <label for="ptkp">Choose your PTKP:</label>
-  <select name="ptkpList" id="ptkpList">
-    <option value="54000000">TK0</option>
-    <option value="58500000">TK1</option>
-    <option value="63000000">TK2</option>
-    <option value="67500000">TK3</option>
-    <option value="58500000">K0</option>
-    <option value="63000000">K1</option>
-    <option value="67500000">K2</option>
-    <option value="72000000">K3</option>
-    <!-- <option value="K3">K/I/0</option>
+                <div><label for="health"> Health</label>
+                    <input type="checkbox" id="healthCheck" name="health" value="health">
+                </div>
+
+                <div><label for="restTK"> JHT/JKK/JKM</label>
+                    <input type="checkbox" id="tkCheck" name="tkCheck" value="tkCheck">
+                </div>
+            </div>
+            <div class="box" id="monthsWorked">
+                <label class="formTitle">Months Worked: </label>
+                <div id="calcmWork"> 0</div>
+            </div>
+            <div id="ptkpLabel">
+                <label for="ptkp">Choose your PTKP:</label>
+                <select name="ptkpList" id="ptkpList">
+                    <option value="54000000">TK0</option>
+                    <option value="58500000">TK1</option>
+                    <option value="63000000">TK2</option>
+                    <option value="67500000">TK3</option>
+                    <option value="58500000">K0</option>
+                    <option value="63000000">K1</option>
+                    <option value="67500000">K2</option>
+                    <option value="72000000">K3</option>
+                    <!-- <option value="K3">K/I/0</option>
     <option value="K3">K/I/1</option>
     <option value="K3">K/I/2</option>
     <option value="K3">K/I/3</option> -->
- </select>
- </div>
- <br>
+                </select>
+            </div>
 
- 
-<br>
+            <div class="box">
+            <button class="button-9" role="button" onclick="checkInput()">Calculate</button> 
+            </div>
+            <br>
 
 
-    </div> 
+            <br>
 
-      
+
+        </div>
+
+
     </div>
     </div>
     <br>
-    
+
     <div id="calc">
         <table>
+            <!-- <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                </tr>
+            </thead> -->
             <tr>
-                <th class="tTitle">INCENTIVES</th>
-                <th></th>
+                <th colspan="2" class="tTitle">INCENTIVES</th>
+        
             </tr>
-        <thead>
-        <tr>
-            <th>X</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-        <tr>
-            <th>Jaminan Kecelakaan Kerja(JKK):
-            </th>
-            <th> <div id="kecVal">0</div></th>
-        </tr>
+            
+            <tr>
+                <th>Jaminan Kecelakaan Kerja(JKK):
+                </th>
+                <th>
+                    <div id="kecVal">0</div>
+                </th>
+            </tr>
 
-<tr>
-    <th>Jaminan Kematian (JKM):    </th>
-    <th> <div id="kemVal">0</div></th>
-</tr>
-<tr>
-    <th>BPJS Kesehatan (KS):    </th>
-    <th><div id="healthInc">0</div>    </th>
-</tr>
-<tr>
-    <th>Gross income:    </th>
-    <th><div id="grossInc">0</div></th>
-</tr>
-<tr>
-    <th class="tTitle">DEDUCTIONS</th>
-    <th></th>
-    
-</tr>
-<tr>
-    <th>Occupation Cost:    </th>
-    <th><div id="occDe">0</div></th>
-</tr>
-<tr>
-    <th>Jaminan Hari Tua (JHT):    </th>
-    <th><div id="harDe">0</div></th>
-</tr>
-<tr>
-    <th>Pension</th>
-    <th> <div id="penDe">0</div></th>
-</tr>
-<tr>
-    <th>BPJS Health:    </th>
-    <th><div id="healthDe">0</div></th>
-</tr>
-<tr>
-    <th>Nett income per month:    </th>
-    <th><div id="monthDiv">0</div></th>
-</tr>
-<tr>
-    <th>Nett income per year:    </th>
-    <th><div id="yearDiv">0</div></th>
-</tr>
-<tr>
-    <th>Rounded Nett income per year:    </th>
-    <th><div id="roundyearDiv">0</div></th>
-</tr>
-<tr>
-    <th>PTKP</th>
-    <th><div id="ptkp">0</div></th>
-</tr>
-<tr>
-    <th>Taxable Income:    </th>
-    <th><div id="incDiv">0</div></th>
-</tr>
-<tr>
-    <th class="tTitle">TAXES</th>
-    <th></th>
-</tr>
-<tr>
-    <th>Tax per year :    </th>
-    <th><div id="yearTax">0</div></th>
-</tr>
-<tr>
-    <th>Tax per month :    </th>
-    <th><div id="monthTax">0</div></th>
-</tr>
-<tr>
-    <th>Take home pay :
-    </th>
-    <th><div id="takeHome">0</div></th>
-</tr>
+            <tr>
+                <th>Jaminan Kematian (JKM): </th>
+                <th>
+                    <div id="kemVal">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>BPJS Kesehatan (KS): </th>
+                <th>
+                    <div id="healthInc">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>Gross income: </th>
+                <th>
+                    <div id="grossInc">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2" class="tTitle">DEDUCTIONS</th>
+             
+            </tr>
+            <tr>
+                <th>Occupation Cost: </th>
+                <th>
+                    <div id="occDe">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>Jaminan Hari Tua (JHT): </th>
+                <th>
+                    <div id="harDe">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>Pension</th>
+                <th>
+                    <div id="penDe">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>BPJS Health: </th>
+                <th>
+                    <div id="healthDe">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>Nett income per month: </th>
+                <th>
+                    <div id="monthDiv">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>Nett income per year: </th>
+                <th>
+                    <div id="yearDiv">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>Rounded Nett income per year: </th>
+                <th>
+                    <div id="roundyearDiv">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>PTKP</th>
+                <th>
+                    <div id="ptkp">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>Taxable Income: </th>
+                <th>
+                    <div id="incDiv">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2" class="tTitle">TAXES</th>
+            
+            </tr>
+            <tr>
+                <th>Tax per year : </th>
+                <th>
+                    <div id="yearTax">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>Tax per month : </th>
+                <th>
+                    <div id="monthTax">0</div>
+                </th>
+            </tr>
+            <tr>
+                <th>Nett Monthly Take home pay :
+                </th>
+                <th>
+                    <div id="takeHome">0</div>
+                </th>
+            </tr>
 
-    </table>
-    <br>
-    <br>
+        </table>
+        <br>
+        <br>
         <!-- <p class="title">Incentives</p>
         <div class="box">
             <label>Jaminan Kecelakaan Kerja(JKK):   </label>
@@ -305,13 +352,14 @@
     </div>
 
     </div> -->
-</div>
+    </div>
 
-<div class="footer">
-    <p>Page created by Chatchai Sae</p>
-  </div>
-  
-        
-    <script src="script.js"></script>    
+    <div class="footer">
+        <p>Page created by Chatchai Sae</p>
+    </div>
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>

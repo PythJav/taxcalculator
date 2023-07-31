@@ -25,6 +25,8 @@ const bonDiv = document.getElementById("bonus");
 
 
 const ptkp = document.getElementById("ptkp");
+const sType = document.getElementById("sType");
+
 const ptkpVal = document.getElementById("ptkpList");
 const sMonth = document.getElementById("sMonth");
 const eMonth = document.getElementById("eMonth");
@@ -46,6 +48,8 @@ let taxmonthTot;
 let takeTot;
 let finTax;
 let monthBon=0;
+let salType=0;
+let convSal=0;
 
 
 function checkInput(){
@@ -67,26 +71,15 @@ function checkInput(){
   }
 
 function calcTax(){
-  findPtkp();
-  calcMonth();
-  
     document.getElementById("calc").style.display = "flex";
-    const realSal = salary.value;
     findPtkp();
-    
     calcMonth();
-    let taxCalc= (parseFloat(salary.value*0.15));
-    
-    
-    // bpjsHealth();
-    // bpjsTk();
-    // penCost();
-    // harCost();
 
-    
-  
+    findPtkp();
     resetBox();
+    salTypeFind();
     checkBox();
+    
     
     grossIncCalc();
     occCost();
@@ -96,8 +89,10 @@ function calcTax(){
     yearCost();
     roundDown();
     taxInc();
+    
     taxYear(finTax);
     taxMonth();
+   
     takePay();
     
     // tax.innerText=taxCalc.toLocaleString('en-US');
@@ -106,15 +101,17 @@ function calcTax(){
 
 }
 
-
+function salTypeFind(){
+ convSal=Math.floor(salary.value/sType.value);
+}
 function taxInc(){
   finTax= Math.max(0,roundYear-ptkpVal.value);
   incDiv.innerText= finTax.toLocaleString('en-US');
 }
 function bpjsHealth(){
-   healthDeCalc= Math.floor(Math.min(120000,(salary.value*0.01)));
+   healthDeCalc= Math.floor(Math.min(120000,(convSal*0.01)));
   healthDe.innerText=healthDeCalc.toLocaleString('en-US');
-   healthIncCalc= Math.floor(Math.min(480000,(salary.value*0.04)));
+   healthIncCalc= Math.floor(Math.min(480000,(convSal*0.04)));
   healthInc.innerText=healthIncCalc.toLocaleString('en-US');
   
 }
@@ -126,6 +123,8 @@ function resetBox(){
   kecVal.innerText=0;
   kemVal.innerText=0;
   harDe.innerText=0;
+  tax.innerText=0;
+  monthTax.innerText=0;
 
 
 }
@@ -145,18 +144,18 @@ function checkBox(){
 }
 
 function bpjsTk(){
-   bpjsKec = Math.floor(salary.value*0.0024);
+   bpjsKec = Math.floor(convSal*0.0024);
   kecVal.innerText=bpjsKec.toLocaleString('en-US');
-   bpjsKem= Math.floor(salary.value*0.003);
+   bpjsKem= Math.floor(convSal*0.003);
   kemVal.innerText=bpjsKem.toLocaleString('en-US');
-  harTot= Math.floor((salary.value)*0.02);
+  harTot= Math.floor((convSal)*0.02);
   harDe.innerText=harTot.toLocaleString('en-US');
 
 
 }
 
 function grossIncCalc(){
-  grossTot= parseInt(salary.value)+parseInt(healthIncCalc)+parseInt(bpjsKec)+parseInt(bpjsKem);
+  grossTot= parseInt(convSal)+parseInt(healthIncCalc)+parseInt(bpjsKec)+parseInt(bpjsKem);
   grossInc.innerText=grossTot.toLocaleString('en-US');
 }
 
@@ -166,13 +165,13 @@ function occCost(){
 
 }
 // function harCost(){
-//   harTot= (salary.value)*0.02;
+//   harTot= (convSal)*0.02;
 //   harDe.innerText=harTot.toLocaleString('en-US');
 
 // }
 
 function penCost(){
-  penTot = Math.floor(Math.min(95596,(salary.value*0.01)));
+  penTot = Math.floor(Math.min(95596,(convSal*0.01)));
   penDe.innerText=penTot.toLocaleString('en-US');
 }
 
@@ -186,7 +185,7 @@ function monthCost(){
 // }
 
 function yearCost(){
-  yearTot= monthTot*(mWorked-1);
+  yearTot= monthTot*(mWorked);
   yearDiv.innerText=yearTot.toLocaleString('en-US');
 
 }
@@ -197,8 +196,8 @@ function roundDown(){
 }
 
 function takePay(){;
-  console.log(salary.value)
-  takeTot=salary.value -harTot-penTot-healthDeCalc-taxmonthTot;
+  console.log(convSal)
+  takeTot=convSal -harTot-penTot-healthDeCalc-taxmonthTot;
   takeHome.innerText=takeTot.toLocaleString('en-US');
 }
 
@@ -236,7 +235,7 @@ function taxYear (amount) {
 };
 
 function taxMonth(){
-  taxmonthTot= Math.floor(taxyearTot/ mWorked);
+  taxmonthTot= (Math.floor(taxyearTot/ mWorked))||0;
   monthTax.innerText=taxmonthTot.toLocaleString('en-US'); 
 
 

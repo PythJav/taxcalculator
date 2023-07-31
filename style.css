@@ -21,11 +21,15 @@
 }
 
 .header {
-    padding: 30px;
+    padding: 15px;
     text-align: center;
-    background: #1abc9c;
-    color: white;
+    background: #ffeba7;
+    color: #102770;
     font-size: 15px;
+    width: 300px;
+    border-radius: 6px;
+    font-family: sans-serif;
+    
   }
 
 .body{
@@ -37,6 +41,10 @@
 
 body{
   padding : 0 250px;
+  background-color: #1f2029;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 div{
   margin: 10px 0;
@@ -60,7 +68,11 @@ div{
     display:flex;
     align-items:center;
     justify-content: space-between;
+    
   }
+  /* h1{
+    font-weight: 600;
+  } */
 
   label {
      background: #EEE; border-color: #BBB; 
@@ -92,9 +104,20 @@ div{
 
  th {
   border: 1px solid black;
+  color:white;
+  background-color: #2a2b38;
   padding: 8px;
 }
+#container{
+  background-color: #2a2b38;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg);
+  padding: 16px;
+  border-radius: 6px;
+}
 
+#calcmWork{
+  color:white;
+}
 table {
   border-collapse: collapse;
   font-family: sans-serif;
@@ -107,6 +130,48 @@ table {
   } */
   
   .tTitle{
-    background-color: cyan;
-    text-align: center;
+    background-color: #333;
+    color: white;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2%;
   }
+
+
+
+.button-9 {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.button-9:disabled {
+  cursor: default;
+}
+
+.button-9:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}

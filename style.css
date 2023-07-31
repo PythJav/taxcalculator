@@ -89,7 +89,10 @@ div{
     color: white;
     text-align: center;
  }
-  
+
+ table, th, td {
+  border: 1px solid black;
+}
   /* .title:after,.title :before {
     content: " ";
     display: block;

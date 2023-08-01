@@ -19,7 +19,9 @@
     align-items: center;
 
 }
-
+#monthsWorked{
+  display: none;
+}
 .header {
     padding: 15px;
     text-align: center;

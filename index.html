@@ -42,8 +42,8 @@
                         <div class="cTtitle"> Start Month</div>
                         <select name='sMonth' id='sMonth'>
                             <!-- <option value=''>--Select Month--</option> -->
-                            <option selected value=''>--Select Month--</option>
-                            <option value='0'>January</option>
+                            <!-- <option selected value=''>--Select Month--</option> -->
+                            <option selected value='0'>January</option>
                             <option value='1'>February</option>
                             <option value='2'>March</option>
                             <option value='3'>April</option>
@@ -63,7 +63,7 @@
                         <div class="cTtitle">End Month</div>
                         <select name='eMonth' id='eMonth'>
                             <!-- <option value=''>--Select Month--</option> -->
-                            <option selected value=''>--Select Month--</option>
+                            <!-- <option selected value=''>--Select Month--</option> -->
                             <option value='1'>January</option>
                             <option value='2'>February</option>
                             <option value='3'>March</option>
@@ -75,7 +75,7 @@
                             <option value='9'>September</option>
                             <option value='10'>October</option>
                             <option value='11'>November</option>
-                            <option value='12'>December</option>
+                            <option selected value='12'>December</option>
                         </select>
                     </div>
                 </div>
@@ -132,41 +132,42 @@
     <br>
 
     <div id="calc">
-        <table>
+        <table class="styled">
             <!-- <thead>
                 <tr>
                     <th>Name</th>
                     <th>Amount</th>
                 </tr>
             </thead> -->
+            <tbody>
             <tr>
                 <th colspan="2" class="tTitle">INCENTIVES</th>
         
             </tr>
             
             <tr>
-                <th>Jaminan Kecelakaan Kerja(JKK):
+                <td>Jaminan Kecelakaan Kerja(JKK):
                 </th>
-                <th>
+                <td>
                     <div id="kecVal">0</div>
                 </th>
             </tr>
 
             <tr>
-                <th>Jaminan Kematian (JKM): </th>
-                <th>
+                <td>Jaminan Kematian (JKM): </th>
+                <td>
                     <div id="kemVal">0</div>
                 </th>
             </tr>
             <tr>
-                <th>BPJS Kesehatan (KS): </th>
-                <th>
+               <td> BPJS Kesehatan (KS): </th>
+                <td>
                     <div id="healthInc">0</div>
                 </th>
             </tr>
             <tr>
-                <th>Gross income: </th>
-                <th>
+                <td>Gross income: </th>
+                <td>
                     <div id="grossInc">0</div>
                 </th>
             </tr>
@@ -175,56 +176,56 @@
              
             </tr>
             <tr>
-                <th>Occupation Cost: </th>
-                <th>
+                <td>Occupation Cost: </th>
+                <td>
                     <div id="occDe">0</div>
                 </th>
             </tr>
             <tr>
-                <th>Jaminan Hari Tua (JHT): </th>
-                <th>
+                <td>Jaminan Hari Tua (JHT): </th>
+                <td>
                     <div id="harDe">0</div>
                 </th>
             </tr>
             <tr>
-                <th>Pension</th>
-                <th>
+                <td>Pension</th>
+                <td>
                     <div id="penDe">0</div>
                 </th>
             </tr>
             <tr>
-                <th>BPJS Health: </th>
-                <th>
+                <td>BPJS Health: </th>
+                <td>
                     <div id="healthDe">0</div>
                 </th>
             </tr>
             <tr>
-                <th>Nett income per month: </th>
-                <th>
+                <td>Nett income per month: </th>
+                <td>
                     <div id="monthDiv">0</div>
                 </th>
             </tr>
             <tr>
-                <th>Nett income per year: </th>
-                <th>
+                <td>Nett income per year: </th>
+                <td>
                     <div id="yearDiv">0</div>
                 </th>
             </tr>
             <tr>
-                <th>Rounded Nett income per year: </th>
-                <th>
+                <td>Rounded Nett income per year: </th>
+                <td>
                     <div id="roundyearDiv">0</div>
                 </th>
             </tr>
             <tr>
-                <th>PTKP</th>
-                <th>
+                <td>PTKP</th>
+                <td>
                     <div id="ptkp">0</div>
                 </th>
             </tr>
             <tr>
-                <th>Taxable Income: </th>
-                <th>
+                <td>Taxable Income: </th>
+                <td>
                     <div id="incDiv">0</div>
                 </th>
             </tr>
@@ -233,25 +234,25 @@
             
             </tr>
             <tr>
-                <th>Tax per year : </th>
-                <th>
+                <td>Tax per year : </th>
+                <td>
                     <div id="yearTax">0</div>
                 </th>
             </tr>
             <tr>
-                <th>Tax per month : </th>
-                <th>
+                <td>Tax per month : </th>
+                <td>
                     <div id="monthTax">0</div>
                 </th>
             </tr>
-            <tr>
-                <th>Nett Monthly Take home pay :
+            <tr id="final">
+                <td>Nett Monthly Take home pay :
                 </th>
-                <th>
+                <td>
                     <div id="takeHome">0</div>
                 </th>
             </tr>
-
+        </tbody>
         </table>
         <br>
         <br>

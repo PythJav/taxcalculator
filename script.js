@@ -67,7 +67,7 @@ function checkInput(){
   else{
     
     calcTax();
-    document.getElementById("calc").scrollIntoView();
+    document.getElementById("final").scrollIntoView();
 
   }  
   }

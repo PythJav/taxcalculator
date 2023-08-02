@@ -126,8 +126,10 @@ div{
   
 
  }
-
- th {
+  tr:nth-of-type(even) td {
+  background-color: #353641;
+}
+ td {
   border: 1px solid black;
   color:white;
   background-color: #2a2b38;
@@ -140,7 +142,11 @@ div{
   border-radius: 6px;
   width: 300px;
 }
+#final td{
+  font-weight: bold;
+  background-color: #393030;
 
+}
 #calcmWork{
   color:white;
 }
@@ -164,7 +170,9 @@ table {
     text-transform: uppercase;
     letter-spacing: 2%;
   }
-
+  tr:hover td{
+    background-color: grey;
+  }
 
 
 .button-9 {

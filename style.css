@@ -79,9 +79,7 @@ div{
 
   .salInput>input{
     width:100%;
-    background-color: rgba(55,65,81,.5);
     border-radius: 0.375rem;
-    color: white;
   }
 
   .input{

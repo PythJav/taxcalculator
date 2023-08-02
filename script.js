@@ -127,11 +127,20 @@ function resetBox(){
   harDe.innerText=0;
   tax.innerText=0;
   monthTax.innerText=0;
+  let healthDeCalc = 0;
+healthIncCalc = 0;
+ bpjsKec = 0;
+ bpjsKem = 0;
+ penTot = 0; 
+ harTot= 0;
+ monthBon=0;
+ salType=0;
+ convSal=0;
 
 
 }
 function checkBox(){
-  if(pensionCheck.checked== true){
+  if(pensionCheck.checked== false){
     penCost();
   }
   if (healthCheck.checked==true){

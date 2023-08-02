@@ -53,7 +53,7 @@ let convSal=0;
 
 
 function checkInput(){
-  if(salary.value==0){
+  if(salary.value==0||!(/^\d+$/.test(salary.value))){
     alert("Input number");
   }
   else if(sMonth.value ==""){
@@ -65,7 +65,9 @@ function checkInput(){
 
   }
   else{
+    
     calcTax();
+    document.getElementById("calc").scrollIntoView();
 
   }  
   }

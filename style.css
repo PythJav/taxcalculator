@@ -19,6 +19,10 @@
     align-items: center;
 
 }
+
+.tkC,.healthC{
+  display: none;
+}
 #monthsWorked{
   display: none;
 }
